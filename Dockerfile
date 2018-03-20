@@ -1,7 +1,6 @@
 FROM php:7-apache
 
-RUN pear config-set http_proxy "$HTTP_PROXY" \
-    && yes | pecl install xdebug
+RUN yes | pecl install xdebug
 
 COPY docker-xdebug-* /usr/local/bin/
 
