@@ -7,7 +7,8 @@ if [ "${1#-}" != "$1" ]; then
 fi
 
 # create xdebug.ini
-docker-xdebug-create-ini /usr/local/etc/php/conf.d/xdebug.ini
-cat /usr/local/etc/php/conf.d/xdebug.ini
+INI_FILE=/usr/local/etc/php/conf.d/xdebug.ini
+docker-xdebug-create-ini ${INI_FILE}
+[ -r ${INI_FILE} ] && cat ${INI_FILE}
 
 exec "$@"
