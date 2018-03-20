@@ -18,7 +18,7 @@ for v in $(env); do
   # echo $v
   case $v in
     XDEBUG_*)
-      [ -z ${FIRST} ] && setup "$1"
+      [ -z ${FIRST} ] && setup "$1" && FIRST=NOMORE
       convert "$v" "$1"
     ;;
   esac
